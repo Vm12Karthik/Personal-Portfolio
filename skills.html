@@ -3,9 +3,144 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <title>Skills</title>
 </head>
+
+<style>
+    * {
+        background: #081b29 ;
+       }
+
+     .heading{
+        color: #0ef;
+        text-align: center;
+    }
+
+    #skills {
+        color:aliceblue;
+        font-size: 20px;
+        line-height: 1.4;
+        margin-bottom: 4 rem;
+    }
+
+    .container{
+        padding: 90px;
+    }
+
+    .skills-list{
+        display: grid;
+        grid-template-columns: repeat(auto-fit,minmax(259px,1fr));
+        grid-gap: 40px;
+        margin-top: 20px;
+    }
+
+    .skills-list div{
+        background-color: transparent;
+        padding: 40px;
+        font-size: 13px;
+        font-weight: 13px;
+        border-right: 10px;
+        border-radius: 50px;
+        transition: background 0.5s, transform 0.5s;
+        box-shadow: 1px 1px 20px aqua,1px 1px 40px aqua;
+    }
+
+    .skills-list div i {
+        font-size: 50px;
+        margin-bottom: 30px;
+    }
+   
+    .skills-list div h2{
+        font-size: 30px;
+        font-weight: 500;
+        margin-bottom: 15px;
+    }
+
+    .skills-list div a{
+        text-decoration: none;
+        color: #000000;
+        font-size: 12px;
+        margin-top: 20px;
+        display: inline-block;
+    }
+
+    .skills-list div:hover{
+        transform: translateY(-10px);
+    }
+
+</style>
+
 <body>
-    <h1> My skills </h1>
+    <h1 class="heading">MY SKILLS</h1>
+
+    <div class="skills" id="skills">
+        <div class="container">
+            <div class="skills-list">
+                
+                <div>
+                    <i class='bx bxl-html5' style="color:orange"></i>
+                    <h2>HTML</h2>
+                </div>
+                <div>
+                    <i class='bx bxl-css3' style="color:blue"></i>
+                    <h2>CSS</h2>
+                </div>
+                <div>
+                    <i class='bx bxl-javascript'  style="color:yellow"></i>
+                    <h2>Javascript</h2>
+                </div>
+                <div>
+                    <img src="https://cdn-icons-png.flaticon.com/128/4492/4492311.png" height="50px">
+                    <h2>SQL</h2>
+                </div>
+                <div>
+                    <i class='bx bxl-bootstrap' style="color:#AF47D2"></i>
+                    <h2>Bootstrap</h2>
+                </div>
+                <div>
+                    <img src="images/python.png" height="50px">
+                    <h2>Python</h2>
+                </div>
+                <div>
+                    <img src="images/git.png" height="50px">
+                    <h2>Git</h2>
+                </div>
+                <div>
+                    <i class='bx bxl-tailwind-css' style="color:aqua"></i>
+                    <h2>Tailwind CSS</h2>
+                </div>
+                <div>
+                    <img src="images/github.png" height="50px">
+                    <h2>Github</h2>
+                </div>
+                <div>
+                    <img src="images/react.png" height="50px">
+                    <h2>React</h2>
+                </div>
+                <div>
+                    <img src="images/msw.png" height="50px">
+                    <h2>MS WORD</h2>
+                </div>
+                <div>
+                    <img src="images/dj.jpeg" height="50px">
+                    <h2>Django</h2>
+                </div>
+                <div>
+                    <img src="images/cpp.png" height="50px">
+                    <h2>C++</h2>
+                </div>
+                <div>
+                    <img src="images/figma.png" height="50px">
+                    <h2>Figma</h2>
+                </div>
+                <div>
+                    <img src="images/mse.png" height="50px">
+                    <h2>MS EXCEL</h2>
+                </div>
+        
+            </div>
+        </div>
+    </div>
 </body>
 </html>
