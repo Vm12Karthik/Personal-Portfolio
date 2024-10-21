@@ -32,6 +32,7 @@ body {
     
 }
 
+
 .navbar a {
     font-size: 20px;
     color: #fff;
@@ -101,7 +102,7 @@ body {
 }
 
 .home-img img {
-    max-width: 450px;
+    max-width: 400px;
     margin-right: -20px;
     border: 10px solid #0ef;
     border-radius: 50%;
