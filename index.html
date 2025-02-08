@@ -5,8 +5,487 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="style.css">
+    
 </head>
+<style>
+    * {
+        margin:0px;
+        padding:0px;
+        box-sizing: border-box;
+        font-family: 'Times New Roman', Times, serif;
+    }
+    
+    body {
+        background:#081b29;
+        color:#fff;
+    }
+    
+    .header {
+        top:0px;
+        left:0px;
+        width: 100%;
+        padding: 25px 10%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 100px;
+    }
+    
+    .logo {
+        font-size: 25px;
+        color:#fff;
+        text-decoration: none;
+        font-weight: 650px;
+        cursor: default;
+        opacity: 0;
+        animation: slideRight 1s ease forwards;
+        
+    }
+    
+    
+    .navbar a {
+        font-size: 20px;
+        color: #fff;
+        text-decoration: none;
+        font-weight: 500px;
+        margin-left: 35px;
+        transition: .3s ease;
+        
+    }
+    
+    .navbar a:hover {
+       color:#0ef;
+    }
+    
+    
+    .home {
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        display:flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 70px 10% 0;
+    }
+    
+    .home-content {
+        max-width: 600px;
+    }
+    
+    .home-content h3 {
+        font-size: 32px;
+        font-weight: 700;
+        opacity: 0;
+        animation: slideBottom 1s ease forwards;
+        animation-delay: .7s;
+        
+    }
+    
+    .home-content h3:nth-of-type(2) {
+        margin-bottom: 30px;
+        opacity: 0;
+        animation: slideTop 1s ease forwards;
+        animation-delay: .7s;
+        
+    }
+    
+    .home-content h3 span {
+        color:#0ef;
+    }
+    
+    .home-content h1 {
+        font-size: 56px;
+        font-weight: 700;
+        margin: -3px 0;
+        opacity: 0;
+        animation: slideRight 1s ease forwards;
+        animation-delay: 1s;
+        
+    }
+    
+    .home-content p{
+        font-size: 16px;
+        opacity: 0;
+        animation: slideLeft 1s ease forwards;
+        animation-delay: 1s;
+    
+    }
+    
+    .home-img img {
+        max-width: 400px;
+        margin-right: -20px;
+        border: 10px solid #0ef;
+        border-radius: 50%;
+        filter:drop-shadow(1px 1px 20px #0ef );
+        opacity: 0;
+        animation: zoomIn 1s ease forwards,floatImage 4s ease-in-out infinite;
+        animation-delay: 2s, 3s;
+    }
+    
+    .social-media a {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        width: 40px;
+        height: 40px;
+        background: transparent;
+        border: 3px solid #0ef;
+        border-radius: 50%;
+        font-size: 20px;
+        color: #0ef;
+        text-decoration: none;
+        margin:30px 15px 30px 0;
+        transition: .5s ease;
+        opacity: 0;
+        animation: slideLeft 1s ease forwards;
+        animation-delay: calc(.2s * var(--i));
+    
+    
+    }
+    
+    .text{
+        filter:drop-shadow(1px 1px 20px #0ef );
+    }
+    
+    .social-media a:hover {
+        background: #0ef;
+        color:#1f242d;
+        box-shadow: 0 0 20px #0ef;
+    }
+    
+    @keyframes slideRight {
+        0% {
+            transform: translateX(-100px);
+            opacity: 0;
+        }
+    
+        100% {
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+    
+    @keyframes slideLeft {
+        0% {
+            transform: translateX(100px);
+            opacity: 0;
+        }
+    
+        100% {
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+    
+    @keyframes slideTop {
+        0% {
+            transform: translateY(100px);
+            opacity: 0;
+        }
+    
+        100% {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+    
+    @keyframes slideBottom {
+        0% {
+            transform: translateY(-100px);
+            opacity: 0;
+        }
+    
+        100% {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+    
+    @keyframes zoomIn {
+        0% {
+            transform: scale(0);
+            opacity: 0;
+        }
+    
+        100% {
+            transform: scale(1);
+            opacity: 1;
+        }
+    }
+    
+    @keyframes floatImage {
+        0% {
+            transform: translateY(0);
+        }
+    
+        50% {
+            transform: translateY(-24px);
+        }
+    
+        100% {
+            transform: translateY(0);
+        }
+    }
+
+       .heading{
+           color: #0ef;
+           text-align: center;
+       }
+       
+       .ab-img img {
+           max-width: 400px;
+           margin-top: 60px;
+           border: 10px solid #0ef;
+           filter:drop-shadow(1px 1px 20px #0ef );
+           border-radius: 50%;  
+       }
+       .about{
+           display:flex;
+           gap:1.5rem;
+       }
+       .about-text{
+           color:aliceblue;
+           font-size: 25px;
+           margin-top: 100px;
+           margin-left: 40px;
+           margin-bottom: 4rem;
+           margin-right: 20px;
+           line-height: 2;
+       }
+       .heading{
+        color: aqua;
+        text-align: center;
+    }
+
+    h2{
+        color: aqua;
+    }
+
+    #skills {
+        color:aliceblue;
+        font-size: 20px;
+        line-height: 1.4;
+        margin-bottom: 4 rem;
+    }
+
+    .container{
+        padding: 90px;
+    }
+
+    .skills-list{
+        display: grid;
+        grid-template-columns: repeat(auto-fit,minmax(259px,1fr));
+        grid-gap: 40px;
+        margin-top: 20px;
+    }
+
+    .skills-list div{
+        background-color: transparent;
+        padding: 40px;
+        font-size: 13px;
+        font-weight: 13px;
+        border-right: 10px;
+        border-radius: 50px;
+        transition: background 0.5s, transform 0.5s;
+        box-shadow: 1px 1px 20px aqua,1px 1px 40px aqua;
+    }
+
+    .skills-list div i {
+        font-size: 50px;
+        margin-bottom: 30px;
+    }
+   
+    .skills-list div h2{
+        font-size: 30px;
+        font-weight: 500;
+        margin-bottom: 15px;
+    }
+
+    .skills-list div a{
+        text-decoration: none;
+        color: #000000;
+        font-size: 12px;
+        margin-top: 20px;
+        display: inline-block;
+    }
+
+    .skills-list div:hover{
+        transform: translatex(30px) translateY(-30px);
+    }
+    .heading{
+        color: aqua;
+        text-align: center;
+    }
+
+    h2{
+        color: aqua;
+    }
+
+    p{
+        color: aliceblue;
+        font-size: 25px;
+    }
+
+    #exp {
+        color:aliceblue;
+        font-size: 20px;
+        line-height: 1.4;
+        margin-bottom: 4 rem;
+    }
+
+    .container{
+        padding: 90px;
+    }
+
+    .exp-list{
+        display: block;
+        padding: 20px;
+        margin-top: 20px;
+    }
+
+    .exp-list div{
+        background-color: transparent;
+        padding: 40px;
+        font-size: 13px;
+        font-weight: 13px;
+        border-right: 10px;
+        border-radius: 50px;
+        transition: background 0.5s, transform 0.5s;
+        box-shadow: 1px 1px 20px aqua,1px 1px 40px aqua;
+    }
+
+    .exp-list div i {
+        font-size: 50px;
+        margin-bottom: 30px;
+    }
+   
+    .exp-list div h2{
+        font-size: 30px;
+        font-weight: 500;
+        margin-bottom: 15px;
+    }
+
+    .exp-list div a{
+        text-decoration: none;
+        color: #000000;
+        font-size: 12px;
+        margin-top: 20px;
+        display: inline-block;
+    }
+
+    .exp-list div:hover{
+        transform: translatex(30px) translateY(-10px);
+    }
+    body {
+        font-family: 'Arial', sans-serif;
+        margin: 0;
+        padding: 0;
+        line-height: 1.6;
+        color:aliceblue;
+    }
+    
+    header {
+        background: rgb(0, 200 , 255);
+        color: #ecf0f1;
+        padding: 40px 0;
+        text-align: center;
+        position: relative;
+    }
+    
+    header h1 {
+        margin: 0;
+        font-size: 2.5em;
+    }
+    
+    header p {
+        font-size: 1.2em;
+        margin: 10px 0 20px;
+    }
+    
+    header nav ul {
+        list-style: none;
+        padding: 0;
+    }
+    
+    header nav ul li {
+        display: inline;
+        margin: 0 15px;
+    }
+    
+    header nav a {
+        color: #ecf0f1;
+        text-decoration: none;
+        font-weight: bold;
+        transition: color 0.3s ease;
+    }
+    
+    header nav a:hover {
+        color: #3498db;
+    }
+    
+    section {
+        padding: 40px 20px;
+        margin: 20px auto;
+        background: #081b29;
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    h2 {
+        border-bottom: 2px solid #3498db;
+        padding-bottom: 10px;
+        color: aliceblue;
+    }
+    
+    .project {
+        margin: 15px 0;
+        padding: 15px;
+        border-radius: 5px;
+        transition: transform 0.3s ease;
+    }
+    
+    .project:hover {
+        transform: translateY(-5px);
+    }
+    
+    footer {
+        text-align: center;
+        padding: 20px 0;
+        background: rgb(0 , 200 ,255);
+        color: #ecf0f1;
+        position: relative;
+        bottom: 0;
+        width: 100%;
+    }
+    
+    form {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    input, textarea {
+        margin-bottom: 15px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+    
+    button {
+        background-color: #3498db;
+        color: #fff;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+    
+    button:hover {
+        background-color: #2980b9;
+    }
+
+
+</style>
 <body>
       
     <header class="header">
@@ -14,10 +493,10 @@
 
         <nav class="navbar">
            <a href="#" class="main">Home</a>
-           <a href="about.html">About</a>
-           <a href="skills.html">Skills</a>
-           <a href="experience.html">Experience</a>
-           <a href="contact.html">contact</a>
+           <a href="#about">About</a>
+           <a href="#skills">Skills</a>
+           <a href="#exp">Experience</a>
+           <a href="#contact">contact</a>
            
         </nav>
     </header>
@@ -45,9 +524,233 @@
 
 
     </section>
+    <section>
+        <h1 class="heading" style="font-size: 50px;">About Me</h1>
+    <div class="about" id="about">
+        <div class="home-img">
+            <img src="images/vmk1.jpg" alt="">
+        </div>
+    <p class="about-text">I am a web Devloper with strong foundation in HTML , CSS , Javascript , Web Design , using frameworks
+        like Bootstrap , Tailwind css , Django , Tools like Github , Figma , Visual Studio Code . I have worked with various tools and technologies 
+    for project devlopment. I am interested in devlopment and followed my passion to gain the skills and apply them practically.
+I am also very in efficient in programming and designing. I have also  participated  in many of the competitions that are related to programming like hackathons 
+and designing activities that are conducted in and out of our university. I have also worked with various projects and applied my skills practically. 
+I am also enthusiastic in teamwork and always tried to give my best in task completion and team presentations</p>
 
+    </div>
+    </section>
 
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
     <script src="script.js"></script>
+    <section>
+        <h1 class="heading"  style="font-size: 50px;">MY SKILLS</h1>
+
+    <div class="skills" id="skills">
+        <div class="container">
+            <div class="skills-list">
+                
+                <div>
+                    <i class='bx bxl-html5' style="color:orange"></i>
+                    <h2>HTML</h2>
+                </div>
+                <div>
+                    <i class='bx bxl-css3' style="color:blue"></i>
+                    <h2>CSS</h2>
+                </div>
+                <div>
+                    <i class='bx bxl-javascript'  style="color:yellow"></i>
+                    <h2>Javascript</h2>
+                </div>
+                <div>
+                    <img src="https://cdn-icons-png.flaticon.com/128/4492/4492311.png" height="50px">
+                    <h2>SQL</h2>
+                </div>
+                <div>
+                    <i class='bx bxl-bootstrap' style="color:#AF47D2"></i>
+                    <h2>Bootstrap</h2>
+                </div>
+                <div>
+                    <img src="images/python.png" height="50px">
+                    <h2>Python</h2>
+                </div>
+                <div>
+                    <img src="images/git.png" height="50px">
+                    <h2>Git</h2>
+                </div>
+                <div>
+                    <i class='bx bxl-tailwind-css' style="color:aqua"></i>
+                    <h2>Tailwind CSS</h2>
+                </div>
+                <div>
+                    <img src="images/github.png" height="50px">
+                    <h2>Github</h2>
+                </div>
+                <div>
+                    <img src="images/react.png" height="50px">
+                    <h2>React</h2>
+                </div>
+                <div>
+                    <img src="images/msw.png" height="50px">
+                    <h2>MS WORD</h2>
+                </div>
+                <div>
+                    <img src="images/dj.jpeg" height="50px">
+                    <h2>Django</h2>
+                </div>
+                <div>
+                    <img src="images/cpp.png" height="50px">
+                    <h2>C++</h2>
+                </div>
+                <div>
+                    <img src="images/figma.png" height="50px">
+                    <h2>Figma</h2>
+                </div>
+                <div>
+                    <img src="images/mse.png" height="50px">
+                    <h2>MS EXCEL</h2>
+                </div>
+        
+            </div>
+        </div>
+    </div>
+    </section>
+    <section>
+        <h1 class="heading" style="font-size: 50px;">MY EXPERIENCE</h1>
+
+    <div class="exp" id="exp">
+        <div class="container">
+            <div class="exp-list">
+                <div>
+                    <img src="images/codsoft.png" height="100px" width="150px">
+                    <h2>CODSOFT</h2>
+                    <p>ROLE    : Web Devlopment Intern
+                        <br>
+                       DOMAIN:Web Devlopment
+                       <br>
+                       Duration : Oct 2024 - Nov 2024
+                       <br>
+                       TASKS   : 
+                       <br>
+                       * Practical Tasks of Coding
+                       <br>
+                                * Projects Submissions
+                        <br>
+                        
+                    </p>
+                </div>
+
+                <br>
+             
+                <div>
+                    <img src="images/jp.jpg" height="100px" width="150px">
+                    <h2>JPMORGAN CHASE & CO</h2>
+                    <p>ROLE    : Virtual Intern
+                        <br>
+                       DOMAIN:Software Engineer
+                       <br>
+                       Duration : Feb 2024 - Mar 2024
+                       <br>
+                       TASKS   : 
+                       <br>
+                       * Use JPMORGAN CHASE & CO  frameworks and tools
+                       <br>
+                                * Interface with a stock price data feed
+                        <br>
+                        
+                    </p>
+                </div>
+
+                <br>
+                
+                <div>
+                    <img src="images/dev.jpeg" height="100px" width="150px">
+                    <h2>DEVTOWN</h2>
+                    <p>
+                       ROLE : Campus Ambassador
+                        <br>
+                       DOMAIN: Soft Skills
+                       <br>
+                       Duration : Jan 2023 - May 2023
+                       <br>
+                       TASKS   : 
+                       <br>
+                       *Promote Devtown among student groups
+                       <br>
+                       *Plan and conduct seminars
+                    </p>
+                </div>
+
+                <br>
+
+                <div>
+                    <img src="images/deloitte.webp" height="100px" width="150px">
+                    <h2>DELOITTE</h2>
+                    <p>
+                    ROLE    : Virtual Intern
+                        <br>
+                       DOMAIN:Software Engineer
+                       <br>
+                       Duration : Feb 2024 - Mar 2024
+                       <br>
+                       TASKS   : 
+                       <br>
+                       *Practical Tasks of Coding
+                       <br>
+                       *Data Analysis
+                       <br>
+                       *Cyber Security
+                    </p>
+                </div>
+                <div>
+                    <img src="images/dev.jpeg" height="100px" width="150px">
+                    <h2>DEVTOWN</h2>
+                    <p>
+                       ROLE : Web Devlopment Intern
+                        <br>
+                       DOMAIN: Web Devlopment
+                       <br>
+                       Duration : May 2023 - June 2023
+                       <br>
+                       TASKS   : 
+                       <br>
+                       *Real world projects
+                       <br>
+                       *Website Devlopment
+                       <br>
+                       *Project Completion
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    </section>
+    <section>
+        <header>
+            <h1>VM KARTHIK</h1>
+    
+        </header>
+    
+        <section id="contact">
+            <h2 style="font-size: 50px;">Contact Me</h2>
+            <form id="contact-form">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+    
+        <footer>
+            <p>&copy; 2024 Your Name. All rights reserved.</p>
+        </footer>
+    
+        <script>
+            document.getElementById('contact-form').addEventListener('submit', function(event) {
+                event.preventDefault();
+                alert('Your message has been sent!');
+                this.reset(); // Clear the form
+            });
+        </script>
+    </section>
 </body>
 </html>
